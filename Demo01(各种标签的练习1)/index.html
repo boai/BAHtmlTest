@@ -37,6 +37,13 @@
 				background-color: peachpuff;
 			}*/
 			
+			table tr td,th{
+				border: 1px solid palegreen;
+				font: "微软雅黑";
+				font-size: 20px;
+			}
+			
+			
 		</style>
 		
 	</head>
@@ -83,7 +90,91 @@
 							博爱的博客：<a href="http://boai.github.io">博爱的博客</a>
 							博爱的地址：广东省广州市番禺区大石镇***
 						</address>
-	
-	
+						<hr color="aquamarine" /; >
+						
+				<h3>1.2.6：code 标签，为网页加入代码</h3>
+						<code>
+						{<br />
+							background-image:linear-gradient(left, red 100px, yellow 200px);<br />
+							text = "这里是测试code"<br />
+						}
+						</code>
+						<hr color="aquamarine" /; >
+
+				<h3>1.2.7：pre 标签，为你的网页加入大段代码</h3>
+						<pre>
+							#import "AppDelegate.h"
+							AppDelegate 中添加这段代码，就可以全局不用管键盘的弹起收回了！
+							#pragma mark - ***** 键盘处理
+							- (void)completionHandleIQKeyboard
+							{				
+  								IQKeyboardManager *manager                  = [IQKeyboardManager sharedManager];
+   								manager.enable                              = YES;
+    								manager.shouldResignOnTouchOutside          = YES;
+   								manager.shouldToolbarUsesTextFieldTintColor = YES;
+   								manager.enableAutoToolbar                   = YES;
+							}
+							var message = @"博爱欢迎你！";<br>
+						    for(var i=1; i<=10; i++)<br>
+ 							 {<br>
+      							  alert(message);<br>
+   							}<br>						
+						</pre>
+						<hr color="aquamarine" /; >
+
+				<h3>1.2.8：ul 标签，添加无序列表、ol 标签，添加有序列表、div 标签，提供唯一的名称，这个就像我们每个人都有一个身份证号，这个身份证号是唯一标识我们的身份的，也是必须唯一的。</h3>
+						<div style="border: 2px solid #FFA500"; id="ulList">
+							<h4>无序列表</h4>
+						<ul>
+							<li><a href="http://boai.github.io/" title="博爱的博客">博爱的博客</a></li>
+							<li><a href="http://weibo.com/2706728003/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="博爱的微博">博爱的微博</a></li>
+							<li><a href="http://www.jianshu.com/users/95c9800fdf47/latest_articles" title="博爱的简书">博爱的简书</a></li>
+							<li><a href="http://www.jianshu.com/collection/072d578bf782" title="博爱的简书专题链接">博爱的简书专题链接</a></li>
+						</ul>
+						</div>
+						
+						<div style="border: 5px solid palegreen; id="olList">
+						<h4>有序列表</h4>
+						<ol>
+							<li>我的第1个列表信息</li>
+							<li>我的第2个列表信息</li>
+							<li>我的第3个列表信息</li>
+							<li>我的第4个列表信息</li>
+						</ol>
+						</div>
+						
+						<hr color="aquamarine" /; >
+
+<h3>1.2.9：table 标签，网页上的表格</h3>
+		<!--具体样式请看最上面的style样式写法：-->
+		<table summary="此表格描述了某学校总体考试成绩情况">
+			<tbody>
+				<caption>博爱小学成绩排行榜</caption>
+				<tr>
+					<th>班级</th>
+					<th>人数（单位：人）</th>
+					<th>总分数</th>
+				</tr>
+				<tr>
+					<th>1601</th>
+					<th>88</th>
+					<th>99.5</th>
+				</tr>
+				<tr>
+					<th>1602</th>
+					<th>78</th>
+					<th>97.5</th>
+				</tr>
+				<tr>
+					<th>1603</th>
+					<th>98</th>
+					<th>109.5</th>
+				</tr>
+			</tbody>
+			
+		</table>
+<hr color="aquamarine" /; >
+
+
 	</body>
 </html>
