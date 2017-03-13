@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>微博右上角 navi menu demo</title>
+	</head>
+	
+	<style>
+		ul {
+			
+		}
+		li {
+			list-style: none;
+		}
+		
+		.weiboList {
+			padding-: 0;
+			margin-: 0;
+			width: 80px;
+			height: 30px;
+			border: 1px solid #333;
+			position: relative;
+		}
+		.weiboList a {
+			display: block;
+			line-height: 30px;
+			text-align: center;
+			text-decoration: none;
+			color: #000;
+			background: #f1f1f1;			
+		}
+		ul ul {
+			padding: 0;
+			margin: 0;
+			width: 140px;
+			border: 1px solid#333;
+			position: absolute;
+			top: 30px;
+			left: -1px;
+			display: none;
+		}
+		ul ul li {
+			text-align: center;
+			line-height: 30px;
+			background-color: beige;
+		}
+		
+	</style>
+	
+	<!--
+		希望把摸个元素移除你的视线：
+		1、display: none;  显示为无
+		2、visibility: hidden; 隐藏
+		3、width \ height
+		4、透明度
+		5、left \ top
+		6、用一个白色的 div 覆盖它
+		7、margin 负值
+		...
+		
+	-->
+	
+	
+	<body>
+		<p>
+			这是一个微博右上角 navi menu
+		</p>
+		<ul>
+			<li id = 'weiboListID' class="weiboList">
+				<a id="weiboListLink" href="#">微博</a>
+				<ul id='weiboListUl'>
+					<li>私信</li>
+					<li>评论</li>
+					<li>@我</li>
+				</ul>
+			</li>
+		</ul>
+		
+		<script>
+			/*
+			 JS 中如何获取元素：
+			 1、通过ID 名称来获取元素：
+			 	document get element by id 'weiboListLink'
+			 	document.getElementById('weiboListLink');
+			 2、
+			 
+			 事件：鼠标事件、键盘事件、系统事件、表单事件、自定义事件...
+			 
+			 on click
+			 onmouseover
+			 onmouseout
+			 onmousedown
+			 onmouseup
+			 onmousemove 	触摸事件
+			 ...
+			 
+			 如何添加事件：
+			 	元素.onmousemove
+			 
+			 函数：可以理解为-命令，做一些事..
+			 	function name() {
+			 		...
+			 	}
+			 1、直接调用：name();
+			 2、事件调用：元素.事件名 = 函数名 （div.onClick = name()）
+			 3、
+			 
+			 测试：
+			 	alert('测试');
+
+			 
+			 */
+			document.getElementById('weiboListID').onmouseover = showWeiboListAction;
+			document.getElementById('weiboListID').onmouseout = hideWeiboListAction;
+
+			function showWeiboListAction (){
+				document.getElementById('weiboListUl').style.display = 'block';
+				document.getElementById('weiboListLink').style.backgroundColor = 'aquamarine';
+			}
+			function hideWeiboListAction (){
+				document.getElementById('weiboListUl').style.display = 'none';
+				document.getElementById('weiboListLink').style.backgroundColor = '#F1F1F1';
+			}
+			
+		</script>
+		
+	</body>
+</html>
