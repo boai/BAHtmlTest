@@ -110,16 +110,23 @@
 
 			 
 			 */
-			document.getElementById('weiboListID').onmouseover = showWeiboListAction;
-			document.getElementById('weiboListID').onmouseout = hideWeiboListAction;
+			
+
+			var weiboList = document.getElementById('weiboListID');
+			var weiboListUl = document.getElementById('weiboListUl');
+			var weiboListLink = document.getElementById('weiboListLink');
+
+			
+			weiboList.onmouseover = showWeiboListAction;
+			weiboList.onmouseout = hideWeiboListAction;
 
 			function showWeiboListAction (){
-				document.getElementById('weiboListUl').style.display = 'block';
-				document.getElementById('weiboListLink').style.backgroundColor = 'aquamarine';
+				weiboListUl.style.display = 'block';
+				weiboListLink.style.backgroundColor = 'aquamarine';
 			}
 			function hideWeiboListAction (){
-				document.getElementById('weiboListUl').style.display = 'none';
-				document.getElementById('weiboListLink').style.backgroundColor = '#F1F1F1';
+				weiboListUl.style.display = 'none';
+				weiboListLink.style.backgroundColor = '#F1F1F1';
 			}
 			
 		</script>
