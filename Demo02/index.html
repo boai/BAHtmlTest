@@ -47,6 +47,63 @@
 		
 	</style>
 	
+	<script>
+			window.onload = function() {
+			/*
+			 JS 中如何获取元素：
+			 1、通过ID 名称来获取元素：
+			 	document get element by id 'weiboListLink'
+			 	document.getElementById('weiboListLink');
+			 2、
+			 
+			 事件：鼠标事件、键盘事件、系统事件、表单事件、自定义事件...
+			 
+			 on click
+			 onmouseover
+			 onmouseout
+			 onmousedown
+			 onmouseup
+			 onmousemove 	触摸事件
+			 ...
+			 
+			 onload  		加载完以后执行
+			 window.onload = 事情
+			 img.onload
+			 body.onload
+			 
+			 如何添加事件：
+			 	元素.onmousemove
+			 
+			 函数：可以理解为-命令，做一些事..
+			 	function name() {
+			 		...
+			 	}
+			 1、直接调用：name();
+			 2、事件调用：元素.事件名 = 函数名 （div.onClick = name()）
+			 3、
+			 
+			 测试：
+			 	alert('测试');
+
+			 
+			 */
+			
+			// 声明变量
+			var weiboList = document.getElementById('weiboListID');
+			var weiboListUl = document.getElementById('weiboListUl');
+			var weiboListLink = document.getElementById('weiboListLink');
+		
+			weiboList.onmouseover = function (){
+				weiboListUl.style.display = 'block';
+				weiboListLink.style.backgroundColor = 'aquamarine';
+			};
+			weiboList.onmouseout = function (){
+				weiboListUl.style.display = 'none';
+				weiboListLink.style.backgroundColor = '#F1F1F1';
+			};
+		};
+	</script>
+	
 	<!--
 		希望把摸个元素移除你的视线：
 		1、display: none;  显示为无
@@ -76,59 +133,6 @@
 			</li>
 		</ul>
 		
-		<script>
-			/*
-			 JS 中如何获取元素：
-			 1、通过ID 名称来获取元素：
-			 	document get element by id 'weiboListLink'
-			 	document.getElementById('weiboListLink');
-			 2、
-			 
-			 事件：鼠标事件、键盘事件、系统事件、表单事件、自定义事件...
-			 
-			 on click
-			 onmouseover
-			 onmouseout
-			 onmousedown
-			 onmouseup
-			 onmousemove 	触摸事件
-			 ...
-			 
-			 如何添加事件：
-			 	元素.onmousemove
-			 
-			 函数：可以理解为-命令，做一些事..
-			 	function name() {
-			 		...
-			 	}
-			 1、直接调用：name();
-			 2、事件调用：元素.事件名 = 函数名 （div.onClick = name()）
-			 3、
-			 
-			 测试：
-			 	alert('测试');
 
-			 
-			 */
-			
-			// 声明变量
-			var weiboList = document.getElementById('weiboListID');
-			var weiboListUl = document.getElementById('weiboListUl');
-			var weiboListLink = document.getElementById('weiboListLink');
-		
-			weiboList.onmouseover = showWeiboListAction;
-			weiboList.onmouseout = hideWeiboListAction;
-
-			function showWeiboListAction (){
-				weiboListUl.style.display = 'block';
-				weiboListLink.style.backgroundColor = 'aquamarine';
-			}
-			function hideWeiboListAction (){
-				weiboListUl.style.display = 'none';
-				weiboListLink.style.backgroundColor = '#F1F1F1';
-			}
-			
-		</script>
-		
 	</body>
 </html>
