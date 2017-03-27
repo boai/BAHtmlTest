@@ -1,8 +1,351 @@
+@use postcss-nested;
+@use autoprefixer;
+@use postcss-simple-vars;
+@use postcss-discard-comments;
+
+$fargglad:#722872;
+$morkfarg:#592059;
+$morkgra:#888;
+
 body{
-	margin: 0;
-	padding: 0;
-	color: #666;
-	background: #888;
-	font-family: "微软雅黑", "helvetica Neue", helvetica, arial, sans-serif;
-	font-size: 20px;
+  margin:0;
+  padding:0;
+  color:#666;
+  background:#888;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 20px;
 }
+h2,h3{
+  color:$morkgra;
+  font-weight:bold;
+  text-align:center;
+  text-transform:uppercase;
+}
+a{
+  color:$fargglad;
+  &:hover,&:focus{
+    color:$morkfarg;
+  }
+}
+#banner .container, 
+main header, 
+#download .grid, 
+#contact>div,
+footer #footer-above {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-around;
+  align-items:flex-start;
+  margin:0 auto; 
+}
+#banner{
+  background-color:$fargglad !important;
+  height:80px;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-color:$morkfarg;
+  .container{
+    width:95%;
+    max-width:1024px;
+    justify-content:space-between;
+    align-items:center;
+    &::before, &::after{
+      display:none
+    }
+  }
+  img{
+    height:50px;
+    margin:15px 0;
+  }
+}
+nav {
+  font-size: 13px;
+  background:$fargglad;
+  -webkit-transition:all .3s;
+  -moz-transition:all .3s;
+  transition:all .3s;
+  @media(max-width:768px){
+    padding:5px;
+    text-align:center;
+    margin:0 auto;
+    width:120%;
+    .active a{
+      color:$fargglad;
+      background:#bbb;
+      box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+  .&>li{
+    height:100%;
+    text-transform:uppercase;
+    font-weight:bold;
+    letter-spacing:2px;
+    display:inline-flex;
+    a{
+      color:#ffffff;
+      padding:10px 20px;
+       &:hover{
+        color:$fargglad;
+        background:#bbb;
+        box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  .&bar-toggle {
+    margin-right:0;
+  }
+}
+#top {
+  height:80px;
+  display:block;
+}
+main {
+  >*:not(.scroll-top){
+    max-width:1024px;
+    margin:0 auto;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  header {
+    background:#aaa;
+    color:#fff;
+    text-align:right;
+    padding:70px 10% 50px;
+    align-items:flex-end;
+    align-content:space-around;
+    @media(min-width:1023px) {
+      padding:50px 30px ;
+    }
+    img {
+      border-radius:50%;
+      margin:30px 0 10px;
+      max-width:80%;
+      height:auto;
+      width:250px;
+    }
+    .intro-text {
+    max-width:675px;
+    text-align:center;
+    margin-bottom:30px;
+    @media(min-width:1023px) {
+      text-align:right;
+      width:610px;
+    }
+    /*.name {
+      text-transform:uppercase;
+      font-weight:bold;
+      font-size: 2em;
+    }*/
+    .skills {
+      font-size: 1.15em;
+    }
+  }
+  }
+  section {
+    background:#eee;
+    padding:40px 0;
+    &#contact>div{
+      margin:0px auto;
+      &>div{
+        width:80%;
+        p {margin: 60px auto 0;
+        max-width:700px;}
+        @media(min-width:1023px) {
+          max-width:38%;
+          p {margin-top: 35px;
+            &:last-child {
+              margin-top:270px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#download {
+& .grid {
+	padding:0;
+	max-width: 90%;
+	list-style: none; 
+	margin-top:20px;
+
+& li {
+	margin:20px;
+  max-width:600px;
+  @media(min-width:1023px) {
+    max-width:420px;
+    }
+  }
+}
+& img {
+  
+	max-width:100%;
+	height:auto;
+	display:block;
+}
+}
+form {
+  width:80%;
+  @media(min-width:1023px) {
+    width:40%;
+    margin-left:20px;
+  }
+  & .row:first-child .form-item {
+    border-top: 1px solid #fff;
+    }
+  .&-item {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bbb;
+    & input, & textarea {
+      z-index: 1;
+      position: relative;
+      padding-right: 0;
+      padding-left: 0;
+      border: 0;
+      border-radius: 0;
+      font-size: 1.5em;
+      background: 0 0;
+      box-shadow: none!important;
+      resize: none;
+      width:100%;
+      &:focus {
+        outline:0
+      }
+    }
+    & label {
+      display: block;
+      z-index: 0;
+      position: relative;
+      top: 2em;
+      margin: 0;
+      font-size: .85em;
+      line-height: 1.764705882em;
+      vertical-align: middle;
+      vertical-align: baseline;
+      opacity: 0;
+      -webkit-transition: top .3s ease,opacity .3s ease;
+      -moz-transition: top .3s ease,opacity .3s ease;
+      -ms-transition: top .3s ease,opacity .3s ease;
+      transition: top .3s ease,opacity .3s ease;
+    }
+    &-filled label {
+      top: 0;
+      opacity: 1;
+      color:#aaa;
+    }
+    &-focused label {
+      color:$fargglad;
+    }
+  }
+}
+footer {
+  color: #fff;
+  background-color: #aaa;
+  text-align:center;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+  h3 {
+    margin-bottom:30px;
+    color:#fff;
+  }
+  #&-above {
+    padding-top:50px;
+    width:80%;
+    div {
+      margin-bottom:50px;
+      width:250px;
+    }    
+    ul {
+      padding:0;
+    }
+    li {
+      display:inline;
+    }
+  }
+  #&-below {
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+    padding:25px 0;
+    background-color:$fargglad;
+    text-align:center;
+  }
+}
+.button {
+  color: #fff;
+  border:solid 2px #fff;
+  border-radius:50%;
+  display:inline-block;
+  width:50px;
+  height:50px;
+  text-align:center;
+  font-size:20px;
+  line-height:48px;
+  transition:all .3s ease-in-out;
+  &:hover {
+    border:solid 2px #fff;
+    color:$fargglad;
+    background: #fff;
+  }
+}
+.scroll-top {
+  z-index:1049;
+  position:fixed; 
+  visibility:visible;
+  bottom:2%;right:2%;
+  a {
+    background:$fargglad;
+    &:hover, &:focus {
+      color:$fargglad;
+      background-color:#bbb;
+      border-color:$fargglad;
+    }
+    @media(min-width:768px){
+      visibility:hidden;
+    }  
+  }
+}
+hr.star-{
+  &bright, &dark {
+    margin: 40px auto 30px;
+    padding: 0;
+    max-width: 512px;
+    border: 0;
+    border-top: solid 5px;
+    text-align:center;
+    header & {
+      @media(min-width:1023px){
+        margin-right:0;
+        text-align:right;
+        &:after {
+          right:-10px;
+        }
+      }
+    }
+    &:after {
+      content: '\f121';
+      font-family: FontAwesome;
+      display: inline-block;
+      position: relative;
+      top: -.8em;
+      padding: 0 .25em;
+      font-size: 2em;
+    }
+  }
+  &bright {
+    border-color: #fff;
+    &:after {
+      color: #fff;
+      background-color: #aaa;
+    }
+  }
+  &dark {
+    border-color: $morkgra;
+    &:after {
+      color: $morkgra;
+      background-color: #eee;
+    }
+  }
+}
+/*#html5badge{
+  position:fixed;
+  right:0;
+  top:100px;
+}*/

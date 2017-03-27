@@ -1,3 +1,123 @@
+header#banner.navbar.navbar-default.navbar-fixed-top
+  .container
+    a.scrollable(href="#top")
+      img(src='http://qlip.in/images/qlip.png', alt='qlip | UI/UX Design and Development', title='qlip | UI/UX Design and Development')
+    button.navbar.toggle.collapsed(type="button", data-target="#navbar", aria-expanded='false')
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    nav#navbar.collapse.navbar-collapse(role='navigation')
+      ul.nav.navbar-nav.navbar-right
+        li
+          a.scrollable(href="#top") 关于博爱
+        li
+          a.scrollable(href="#download") 下载助理
+        li
+          a.scrollable(href="#contact") 联系我们
+// end header
+a#top(name="home")
+  main
+    header
+      .intro-text
+        p
+          | Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction;  devoted to functional programming and information architecture.
+        hr.star-bright
+        span.skills  Web Developer - User Experience Designer - Graphic Artist
+      img(src='http://q.qlogo.cn/qqapp/1105285308/2D05134F80401D12A763CDF3287331B6/100', alt='A picture of Justin looking at San Francisco from across the Golden Gate Bridge.', title='A picture of Justin looking at San Francisco from across the Golden Gate Bridge.')
+  // Gallery Grid Section
+  section#download
+    h2 下载助理
+    hr.star-dark
+    ul.grid
+      li 
+        img(src='http://qlip.in/images/YMCA-Realtor-Donation-3.jpg', alt='')
+      li
+        img(src='http://qlip.in/images/webcaballero.jpg', alt='')
+      li
+         img(src='http://qlip.in/images/webmarqas.jpg', alt='')
+      li
+        img(src='http://qlip.in/images/webbrandaxis.jpg', alt='')
+      li
+        img(src='http://qlip.in/images/panacea1.jpg', alt='')
+      li
+        img(src='http://qlip.in/images/webgatomalo.jpg', alt='')
+  // Contact Section
+  section#contact
+    h2 联系我们
+    hr.star-dark
+    div
+      form#contactForm(novalidate="")
+        .form-item
+          label(for="“name”") Name
+          input#name(type="text", placeholder="Name", required="")
+        .form-item
+          label(for='“email”') Email Address
+          input#email(type='email', placeholder='Email Address', required='')
+        .form-item
+          label(for='“phone”') Phone Number
+          input#phone(type='tel', placeholder='Phone Number', required='')
+        .form-item
+          label(for='“message”') Message
+          textarea#message(rows='5', placeholder='Message', required='')
+        br
+        button(type="submit") Send
+      div
+        p
+          | Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.
+        p I promise to reply A.S.A.P.
+        p Note: No spam/soliciting pour moi, merci :)
+  // Scroll to Top Button (Only supposed to be visible on small and small screen sizes)
+  .scroll-top
+    a.button.scrollable(href="#top")
+      i.fa.fa-chevron-up
+// Footer
+footer
+  #footer-above
+    div
+      h3 About this page
+      p
+        | Made with
+        i.fa.fa-fw.fa-coffee
+        |  and
+        i.fa.fa-fw.fa-music
+        br
+        | by 
+        a(href="http://boaihome.com") boai
+        | .
+    div
+      h3 Around The Web
+      ul
+        li
+          a.button.social(href="https://www.linkedin.com/in/hallaathrad")
+            i.fa.fa-fw.fa-linkedin
+        li
+          a.button.social(href="https://github.com/hallaathrad")
+            i.fa.fa-fw.fa-github
+        li
+          a.button.social(href="https://twitter.com/hallaathrad")
+            i.fa.fa-fw.fa-twitter
+        li
+          a.button.social(href="https://www.flickr.com/photos/hallaathrad/")
+            i.fa.fa-fw.fa-flickr
+  #footer-below
+    | boai © 
+    script.
+      document.write(new Date().getFullYear()) 
+    | . All Rights Reversed
+// <aside id="html5badge"><img src="http://www.w3.org/html/logo/badge/html5-badge-v-css3-graphics-semantics.png" width="38" height="170" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, and Semantics"></aside>
 
 
 
+
+
+
+
+
+
+
+
+
+
+     
+    
