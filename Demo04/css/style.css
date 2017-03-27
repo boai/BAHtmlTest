@@ -1,4 +1,8 @@
-.div_1{
-  
-  
+body{
+	margin: 0;
+	padding: 0;
+	color: #666;
+	background: #888;
+	font-family: "微软雅黑", "helvetica Neue", helvetica, arial, sans-serif;
+	font-size: 20px;
 }
