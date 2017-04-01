@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title> 显示/隐藏 小测试</title>
 	</head>
-	
+
 	<style>
 		.div1 {
 			left: 50px;
@@ -13,9 +13,9 @@
 			background-color: greenyellow;
 			/*display: none;*/
 		}
-		
+
 	</style>
-	
+
 	<script type="text/javascript">
 		window.onload = function (){
 			var oButton1 = document.getElementById('button1');
@@ -23,7 +23,7 @@
 			var oButton3 = document.getElementById('button3');
 			var div1 = document.getElementById('div1');
 			var isButton3Clicked = false;
-			
+
 			oButton1.onclick = showDiv;
 			oButton2.onclick = hideDiv;
 			oButton3.onclick = function (){
@@ -37,27 +37,29 @@
 					div1.style.display = 'none';
 				}
 			};
-			
+
 			function showDiv (){
 				div1.style.display = 'block';
 			};
 			function hideDiv (){
 				div1.style.display = 'none';
 			};
-			
+
 		};
-		
-		
+
+
 	</script>
-	
+
 	<body>
 		<button id = 'button1' type="button">显示</button>
 		<button id = 'button2' type="button">隐藏</button>
 		<input id = 'button3' type="button" value="点我试试" />
 
 		<div id="div1" class="div1">
-			
+
 		</div>
-		
+
+
+
 	</body>
 </html>
