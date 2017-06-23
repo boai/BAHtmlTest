@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+            <script language="javascript">
+
+            // JS执行window.webkit.messageHandlers..postMessage(<messageBody>)，其中 BAShare 是 和 OC 端协议的方法名，messageBody 是 OC 传过来的内容
+            function ba_shareClick() {
+                alert('hello');
+                window.webkit.messageHandlers.BAShare.postMessage({title:'博爱测试分享的标题',content:'博爱测试分享的内容',url:'https://github.com/BAHome'});
+            }
+
+            // 分享回调结果显示
+            function ba_shareResult(channel_id,share_channel,share_url) {
+                var content = channel_id+","+share_channel+","+share_url;
+                alert(content);
+                document.getElementById("returnValue").value = content;
+            }
+
+            // JS执行 window.webkit.messageHandlers.BACamera.postMessage(<messageBody>)
+            function ba_cameraClick() {
+                window.webkit.messageHandlers.BACamera.postMessage(null);
+            }
+
+            // 调用相册回调结果显示
+            function ba_cameraResult(result) {
+                alert(result);
+                document.getElementById("returnValue").value = result;
+            }
+
+            function ba_alert(message) {
+                asyncAlert(message);
+                window.webkit.messageHandlers.BAAlert.postMessage(message);
+            }
+
+            function asyncAlert(content) {
+                setTimeout(function() {
+                           alert(content);
+                           },1);
+            }
+
+
+            </script>
+    </head>
+
+    <body>
+        <h1>这是按钮调用</h1>
+        <input type="button" value="分享" onclick="ba_alert("")" />
+        <input type="button" value="相机" onclick="ba_cameraClick()" />
+
+        <h1>回调展示区</h1>
+        <textarea id ="returnValue" type="value" rows="5" cols="40">
+
+        </textarea>
+    </body>
+</html>

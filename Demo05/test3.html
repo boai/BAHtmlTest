@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>基于浏览器的HTML5查找地理位置</title>
+        <!-- 百度API -->
+        <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script>
+        <script src="/Content/Scripts/jquery.flexslider.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6yAoynmTPNlTBa8z1X4LfwGE"></script>
+        <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+
+        <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+
+        <script>
+
+            var position_option = {
+                enableHighAccuracy: true,
+                maximumAge: 30000,
+                timeout: 20000
+            };
+        navigator.geolocation.getCurrentPosition(getPositionSuccess, getPositionError, position_option);
+
+        getPositionSuccess: function ( position ){
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            alert( "您所在的位置： 纬度" + lat + "，经度" + lng );
+            console.log(position.coords.latitude+'\n,'+position.coords.longitude);
+            if(typeof position.address !== "undefined"){
+                var country = position.address.country;
+                var province = position.address.region;
+                var city = position.address.city;
+                alert(' 您位于 ' + country + province + '省' + city +'市');
+            }
+
+<!--            var currentLat = position.coords.latitude;-->
+<!--            var currentLon = position.coords.longitude;-->
+<!--            SetCookie("curLat", currentLat, 1);//设置cookie-->
+<!--            SetCookie("curLng", currentLon, 1);//设置cookie-->
+<!--            var gpsPoint = new BMap.Point(currentLon, currentLat);-->
+<!--            -->
+<!--            var pt = new BMap.Point(currentLon, currentLat);-->
+<!--            var geoc = new BMap.Geocoder();-->
+<!--            geoc.getLocation(pt, function (rs) {-->
+<!--            -->
+<!--             var addComp = rs.addressComponents;-->
+<!--             SetCookie("curLat", currentLat, 1); //设置cookie-->
+<!--             SetCookie("curLng", currentLon, 1); //设置cookie-->
+<!--             //alert(JSON.stringify(addComp));-->
+<!--             var city = addComp.city;-->
+<!--                             -->
+<!--             //获得具体街道信息-->
+<!--             var texts = addComp.district + "-" + addComp.street + "-" + addComp.streetNumber;-->
+<!--             $("#nowRoad").text(texts);-->
+
+
+        }
+
+        getPositionError: function (error) {
+            switch (error.code) {
+                case error.TIMEOUT:
+                alert("连接超时，请重试");
+                break;
+                case error.PERMISSION_DENIED:
+                alert("您拒绝了使用位置共享服务，查询已取消");
+                break;
+                case error.POSITION_UNAVAILABLE:
+                alert("获取位置信息失败");
+                break;
+            }
+        }
+
+                                 var geolocation = new BMap.Geolocation();
+                                 geolocation.getCurrentPosition(function (r) {
+                                                                if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                                                                var mk = new BMap.Marker(r.point);
+                                                                currentLat = r.point.lat;
+                                                                currentLon = r.point.lng;
+                                                                SetCookie("curLat", currentLat, 1); //设置cookie
+                                                                SetCookie("curLng", currentLon, 1); //设置cookie
+                                                                var pt = new BMap.Point(currentLon, currentLat);
+                                                                var geoc = new BMap.Geocoder();
+                                                                geoc.getLocation(pt, function (rs) {
+                                                                                 var addComp = rs.addressComponents;
+                                                                                 SetCookie("curLat", currentLat, 1); //设置cookie
+                                                                                 SetCookie("curLng", currentLon, 1); //设置cookie
+
+                                                                                 var city = addComp.city;
+                                                                                 var addComp = rs.addressComponents;
+                                                                                 var texts = addComp.district + "-" + addComp.street + "-" + addComp.streetNumber;
+                                                                                 //获取地理位置成功，跳转
+
+
+
+                                                                                 }
+
+        window.onload=getLocation;
+            </script>
+    </head>
+    <body>
+
+
+
+        <div id="container" style="width:600px;height:600px"></div>
+    </body>
+</html>
